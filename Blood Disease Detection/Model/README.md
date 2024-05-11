@@ -1,29 +1,36 @@
 # BLOOD DISEASE DETECTION
 
-**GOAL**
+
+### 🎯 Goal
 To make a CNN to classify different type of blood disease.
 <br>
 
-**DATASET**
+### 🧵 **Dataset**
 https://www.kaggle.com/datasets/paultimothymooney/blood-cells
 <br>
 
-**DESCRIPTION**
-This dataset contains 12,500 (320x240 rgb) augmented images of blood cells (JPEG) with accompanying cell type labels (CSV). There are approximately 3,000 images for each of 4 different cell types grouped into 4 different folders (according to cell type). The cell types are Eosinophil, Lymphocyte, Monocyte, and Neutrophil.
+### 🧾 **Description**
+This dataset contains 12,500 (320x240 rgb) augmented images of blood cells (JPEG) with accompanying cell type labels (CSV). There are approximately 3,000 images. for each of 4 different cell types grouped into 4 different folders (according to cell type). The cell types are Eosinophil, Lymphocyte, Monocyte, and Neutrophil.
 
 There are 2 folders namely dataset-master and dataset2-master. dataset-master contains the original (with no augmentation) 410 images of the different cell types. Where as the dataset2-master contains 3000 augmented images for each cell types, with different folders for training, testing and validation (test_simple).
 <br>
 
-**BRIEF EXPLINATION**
-I have created an input pipeline using `tf.keras.utils.image_dataset_from_directory`. It eases the process of creating traing, testing and validation datasets with the use of a simple folder structure. More on it [image_dataset_from_directory](https://www.tensorflow.org/api_docs/python/tf/keras/utils/image_dataset_from_directory).
+### 🧮 **What I had done!**
+I have created an input pipeline using tf.keras.utils.image_dataset_from_directory. It eases the process of creating traing, testing and validation datasets with the use of a simple folder structure.More on it [image_dataset_from_directory](https://www.tensorflow.org/api_docs/python/tf/keras/utils/image_dataset_from_directory).
 
 Then the datasets are passed to the model for training. The CNN consists of 4 `2D Convolution` and `Pooling` layers with different number of filters, two `Dense` layers with a `Dropout` of 10% between them.
 <br>
 
-**MODELS USED**
-List out all the algorithms or models used in this project Why have you choosed that algorithms should also be stated
-Summary of the model -
+### 🚀 **Models Implemented**
+
+These are the models I have implemented -
+<br>
 ![MODEL SUMMARY](../Images/model_summary.png)
+<br>
+<br>
+
+
+### 📈 **Performance of the Models based on the Accuracy Scores**
 
 The model is trained with various parameter combinations.
 
@@ -35,7 +42,7 @@ The model is trained with various parameter combinations.
 | adam      | sparse categorical crossentropy | relu                | ![ACCURACY](../Images/adam_scc_relu_accuracy.svg)                    | ![LOSS](../Images/adam_scc_relu_loss.svg)                            |
 | rmsprop   | sparse categorical crossentropy | relu                | ![ACCURACY](../Images/rmsprop_scc_relu_accuracy.svg)                 | ![LOSS](../Images/rmsprop_scc_relu_loss.svg)                         |
 | sgd       | sparse categorical crossentropy | relu                | ![ACCURACY](../Images/sgd_scc_relu_accuracy.svg)                     | ![LOSS](../Images/sgd_scc_relu_loss.svg)                             |
-<br>
+
 
 ###### From the above reults we can deduce that our model works best with the RMSPROP(Root Mean Squared Propagation) optimizer.
 The below image is the graph of all the accuracies and losses combined.
@@ -51,24 +58,33 @@ One thing to take note is that RMSPROP may not always show this kind of performa
 ###### Now we experiment how the accuracy and loss (both training and validation) are affected when we change the number of dense layers and the neurons in them.
 <br>
 
-**LIBRARIES NEEDED**
-matplotlib == 3.5.1
+
+
+### 📊 **Exploratory Data Analysis Results**
+Different Cell types -
+<br>
+![CELL TYPES](../Images/cell_types.png)
+<br>
+### 📚 **Libraries Needed**
+matplotlib == 3.5.1 
+<br>
 numpy == 1.22.3
+<br>
 Pillow == 9.2.0
+<br>
 protobuf == 4.21.5
+<br>
 tensorboard == 2.9.1
+<br>
 tensorflow == 2.9.1
 <br>
 
-**VISUALIZATION**
-Differnet Cell types
-![CELL TYPES](../Images/cell_types.png)
 
-
-**CONCLUSION**
+### 📢 **Conclusion**
 Based on the optimizer used, we get different accuracies for the same model. Some optimizers for example SGD (Stochastic Gradient Descent) because of a slower convergance need more epochs to reach the minimum when compared to optimizers like RMSPROP (Root Mean Squared Propagation).
 
-# Uttkarsh Patel
+### ✒️ **Signature**
+`Uttkarsh Patel`
 
 Connect with me on Linkedin: https://www.linkedin.com/in/uttkarsh-patel-62b011218/
 
